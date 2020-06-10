@@ -4,6 +4,9 @@
 @import './solid.css';
 @font-face {
     font-family: "Inter";
+    font-display: swap;
+    font-style: normal;
+    font-weight: 400;
     src: url("../../static/fonts/inter/regular.woff2"), url("../../static/fonts/inter/regular.woff");
 }
 
@@ -15,12 +18,6 @@
     --gray4: #454e56;
     --gray5: #2a2e35;
     --gray6: #12181b;
-    --blue: #61dafb;
-    --yelow: #ffe564;
-    --breakpoint-xs: 576px;
-    --breakpoint-sm: 768px;
-    --breakpoint-md: 992px;
-    --breakpoint-lg: 1200px;
 }
 
 .light {
@@ -42,7 +39,15 @@ body {
     font-family: "Inter", sans-serif;
     background-color: var(--bg);
     color: var(--text);
-    transition: background 500ms ease-in-out, color 750ms ease-in-out;
+    transition: background 500ms ease-in-out, color 500ms ease-in-out;
+}
+
+hr {
+    border-color: var(--border-color);
+}
+
+section {
+    min-height: 100vh;
 }
 
 body::-webkit-scrollbar {

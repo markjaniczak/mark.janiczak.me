@@ -23,18 +23,18 @@ const Layout = ({ children }) => {
   return (
     <div className="container-fluid">
       <div className="row">
-        <aside className="d-none d-xl-block col-lg-3 sticky-top">
+        <aside className="d-none d-xl-block col-xl-2 sticky-top">
           <span
-            className="text-uppercase fixed-bottom"
+            className="text-uppercase position-absolute"
             style={{ bottom: 50, left: 50 }}
           >
             E: <a href="mailto:mark@janiczak.me">mark@janiczak.me</a>
           </span>
         </aside>
-        <main className="col-12 col-xl-6">{children}</main>
-        <aside className="d-none d-xl-block col-xl-3 sticky-top">
+        <main className="col-12 col-xl-8">{children}</main>
+        <aside className="d-none d-xl-block col-xl-2 sticky-top">
           <div
-            className="fixed-top"
+            className="position-absolute"
             style={{ top: 50, right: 50, left: "auto" }}
           >
             <a onClick={toggleTheme} style={{ cursor: "pointer" }}>
@@ -46,7 +46,7 @@ const Layout = ({ children }) => {
             </a>
           </div>
           <div
-            className="d-flex justify-content-between text-uppercase text-right fixed-bottom"
+            className="d-flex justify-content-between text-uppercase text-right position-absolute"
             style={{
               bottom: 50,
               right: 50,

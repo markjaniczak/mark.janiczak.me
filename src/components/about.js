@@ -3,7 +3,6 @@ import React from "react"
 import Me from "./me"
 
 const About = () => {
-
   return (
     <section className="container mb-4" style={{ minHeight: "100vh" }}>
       <div className="row">
