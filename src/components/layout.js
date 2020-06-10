@@ -26,9 +26,14 @@ const Layout = ({ children }) => {
         <aside className="d-none d-xl-block col-xl-2 sticky-top">
           <span
             className="text-uppercase position-absolute"
-            style={{ bottom: 50, left: 50 }}
+            style={{
+              bottom: 50,
+              left: 50,
+              transformOrigin: "left",
+              transform: "rotateZ(-90deg)",
+            }}
           >
-            E: <a href="mailto:mark@janiczak.me">mark@janiczak.me</a>
+            <a href="mailto:mark@janiczak.me">mark@janiczak.me</a>
           </span>
         </aside>
         <main className="col-12 col-xl-8">{children}</main>
@@ -92,9 +97,9 @@ const Layout = ({ children }) => {
       <footer className="row d-xl-none mb-4">
         <div className="col text-center">
           <span className="text-uppercase">
-          E: <a href="mailto:mark@janiczak.me">mark@janiczak.me</a>
+            E: <a href="mailto:mark@janiczak.me">mark@janiczak.me</a>
           </span>
-          <hr style={{ borderColor: 'var(--border-color)'}}/>
+          <hr style={{ borderColor: "var(--border-color)" }} />
           <span>
             <a
               className="mr-3"
