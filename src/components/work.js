@@ -90,7 +90,7 @@ const ExperienceGroup = ({ workplace, link, children }) => {
     <div>
       <div className="mb-2">
         <h3 className="d-inline">{workplace} </h3>
-        <a target="_blank" rel="noopener" href={link}>
+        <a title={workplace} target="_blank" rel="noopener" href={link}>
           <i className="fa fa-link"></i>
         </a>
       </div>
