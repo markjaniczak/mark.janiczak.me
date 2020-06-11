@@ -1,4 +1,4 @@
-import React, { Children, useMemo } from "react"
+import React, { useMemo } from "react"
 
 const experiences = [
   {
@@ -63,7 +63,7 @@ const Experience = ({ role, fromDate, toDate, blurb }) => {
     months += to.getMonth()
     months -= from.getMonth()
     return months
-  }, [fromDate, toDate])
+  }, [from, to])
 
   const shortMonthName = new Intl.DateTimeFormat("en-AU", {
     month: "short",
@@ -90,7 +90,7 @@ const ExperienceGroup = ({ workplace, link, children }) => {
     <div>
       <div className="mb-2">
         <h3 className="d-inline">{workplace} </h3>
-        <a title={workplace} target="_blank" rel="noopener" href={link}>
+        <a title={workplace} target="_blank" rel="noreferrer" href={link}>
           <i className="fa fa-link"></i>
         </a>
       </div>

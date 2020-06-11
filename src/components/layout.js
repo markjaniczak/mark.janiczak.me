@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import PropTypes from "prop-types"
+import classNames from "classnames"
 
 const Layout = ({ children }) => {
   let websiteTheme
@@ -42,13 +43,20 @@ const Layout = ({ children }) => {
             className="position-absolute"
             style={{ top: 50, right: 50, left: "auto" }}
           >
-            <a onClick={toggleTheme} style={{ cursor: "pointer" }}>
+            <button
+              className={classNames("btn", {
+                "btn-light": theme === "light",
+                "btn-dark": theme === "dark",
+              })}
+              title="Toggle theme"
+              onClick={toggleTheme}
+            >
               {theme === "dark" ? (
                 <i className="fa fa-sun" />
               ) : (
                 <i className="fa fa-moon" />
               )}
-            </a>
+            </button>
           </div>
           <div
             className="d-flex justify-content-between text-uppercase text-right position-absolute"
@@ -67,7 +75,7 @@ const Layout = ({ children }) => {
               <a
                 className="mr-2"
                 title="github"
-                rel="noopener"
+                rel="noreferrer"
                 target="_blank"
                 href="https://github.com/markjaniczak"
               >
@@ -76,7 +84,7 @@ const Layout = ({ children }) => {
               <a
                 className="mr-2"
                 title="npm"
-                rel="noopener"
+                rel="noreferrer"
                 target="_blank"
                 href="https://www.npmjs.com/~markjaniczak"
               >
@@ -84,7 +92,7 @@ const Layout = ({ children }) => {
               </a>
               <a
                 title="linkedin"
-                rel="noopener"
+                rel="noreferrer"
                 target="_blank"
                 href="https://www.linkedin.com/in/markjaniczak/"
               >
@@ -104,7 +112,7 @@ const Layout = ({ children }) => {
             <a
               className="mr-3"
               title="github"
-              rel="noopener"
+              rel="noreferrer"
               target="_blank"
               href="https://github.com/markjaniczak"
             >
@@ -113,7 +121,7 @@ const Layout = ({ children }) => {
             <a
               className="mr-3"
               title="npm"
-              rel="noopener"
+              rel="noreferrer"
               target="_blank"
               href="https://www.npmjs.com/~markjaniczak"
             >
@@ -121,7 +129,7 @@ const Layout = ({ children }) => {
             </a>
             <a
               title="linkedin"
-              rel="noopener"
+              rel="noreferrer"
               target="_blank"
               href="https://www.linkedin.com/in/markjaniczak/"
             >
