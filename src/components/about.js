@@ -11,7 +11,7 @@ const About = () => {
         </div>
       </div>
       <div className="row">
-        <div className="col-12 col-xl-6">
+        <div className="col-12 col-lg-6">
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Aenean
@@ -41,7 +41,7 @@ const About = () => {
             ultrices dui sapien eget mi proin.
           </p>
         </div>
-        <div className="col-12 col-xl-6">
+        <div className="col-12 col-lg-6">
           <Me />
         </div>
       </div>

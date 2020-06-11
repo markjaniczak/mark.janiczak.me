@@ -23,7 +23,7 @@ const experiences = [
         role: "Web Application Support",
         fromDate: "2017-02-01",
         toDate: "2018-02-01",
-        blurb: "",
+        blurb: `Providing support for the software which includes the platform’s marketplace integrations, shipping integrations and inventory system.`,
       },
     ],
   },
@@ -70,7 +70,7 @@ const Experience = ({ role, fromDate, toDate, blurb }) => {
   }).format
 
   return (
-    <div className="row mb-1" style={{ minHeight: 180 }}>
+    <div className="row mb-1">
       <div className="col-12 col-lg-6">
         <h4>{role}</h4>
         <small>
@@ -80,7 +80,7 @@ const Experience = ({ role, fromDate, toDate, blurb }) => {
           {`${duration} months`}
         </small>
       </div>
-      <div className="col-12 col-lg-6">{blurb}</div>
+      <div className="col-12 col-lg-6" style={{ minHeight: 140 }}>{blurb}</div>
     </div>
   )
 }
