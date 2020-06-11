@@ -97,8 +97,14 @@ aside {
   top: 50%;
   margin-top: -12.5px;
   box-shadow: inset 0 0 0 2px var(--text);
-  border-radius: 25px;
+  border-radius: 4px;
   position: relative;
+}
+
+@media (min-width: 1200px) {
+    .icon-scroll {
+        border-radius: 12.5px;
+    }
 }
 
 .icon-scroll:before {
