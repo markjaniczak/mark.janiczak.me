@@ -1,7 +1,7 @@
-import "./src/styles/global.css"
-import React from 'react'
+require("./src/styles/global.css")
+const React = require("react")
 
-export const onRenderBody = ({ setPreBodyComponents  }) => {
+exports.onRenderBody = ({ setPreBodyComponents  }) => {
     setPreBodyComponents([
       React.createElement('script', {
         dangerouslySetInnerHTML: {
