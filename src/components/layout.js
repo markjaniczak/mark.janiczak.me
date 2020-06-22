@@ -8,10 +8,12 @@ const Layout = ({ children }) => {
     websiteTheme = window.__theme
   }
 
+  const [key, setKey] = useState("browser")
   const [theme, setTheme] = useState(websiteTheme)
 
   useEffect(() => {
     setTheme(window.__theme)
+    setKey("client")
     window.__onThemeChange = () => {
       setTheme(window.__theme)
     }
@@ -44,6 +46,7 @@ const Layout = ({ children }) => {
             style={{ top: 50, right: 50, left: "auto" }}
           >
             <button
+              key={key}
               className={classNames("btn", {
                 "btn-light": theme === "light",
                 "btn-dark": theme === "dark",
