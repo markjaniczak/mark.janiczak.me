@@ -1,8 +1,13 @@
-const React = require('react')
+const React = require("react")
+const { default: Layout } = require("./src/components/layout")
 
-exports.onRenderBody = ({ setPreBodyComponents  }) => {
+exports.wrapPageElement = ({ element, props }) => {
+  return <Layout {...props}>{element}</Layout>
+}
+
+exports.onRenderBody = ({ setPreBodyComponents }) => {
   setPreBodyComponents([
-    React.createElement('script', {
+    React.createElement("script", {
       dangerouslySetInnerHTML: {
         __html: `
           (() => {    
