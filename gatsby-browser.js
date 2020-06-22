@@ -1,7 +1,7 @@
 import "./src/styles/global.css"
 import React from 'react'
 
-exports.onRenderBody = ({ setPreBodyComponents  }) => {
+export const onRenderBody = ({ setPreBodyComponents  }) => {
     setPreBodyComponents([
       React.createElement('script', {
         dangerouslySetInnerHTML: {
