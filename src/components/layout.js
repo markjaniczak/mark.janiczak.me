@@ -24,123 +24,128 @@ const Layout = ({ children }) => {
   }
 
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <aside className="d-none d-xl-block col-xl-2 sticky-top">
-          <span
-            className="text-uppercase position-absolute"
-            style={{
-              bottom: 50,
-              left: 50,
-              transformOrigin: "left",
-              transform: "rotateZ(-90deg)",
-            }}
-          >
-            <a href="mailto:mark@janiczak.me">mark@janiczak.me</a>
-          </span>
-        </aside>
-        <main className="col-12 col-xl-8">{children}</main>
-        <aside className="d-none d-xl-block col-xl-2 sticky-top">
-          <div
-            className="position-absolute"
-            style={{ top: 50, right: 50, left: "auto" }}
-          >
-            <button
-              key={key}
-              className={classNames("btn", {
-                "btn-light": theme === "light",
-                "btn-dark": theme === "dark",
-              })}
-              title="Toggle theme"
-              onClick={toggleTheme}
-            >
-              {theme === "dark" ? (
-                <i className="fa fa-sun" />
-              ) : (
-                <i className="fa fa-moon" />
-              )}
-            </button>
+    <div className="d-flex">
+      <aside className="d-none d-xl-flex flex-column align-self-stretch" style={{ width: 200 }}>
+        <div style={{ height: '100vh' }} />
+        <div style={{ flexGrow: 1 }}>
+          <div className="sticky-top" style={{ top: 50, left: 50 }}>
           </div>
-          <div
-            className="d-flex justify-content-between text-uppercase text-right position-absolute"
-            style={{
-              bottom: 50,
-              right: 50,
-              left: "auto",
-              width: 300,
-              transformOrigin: "right",
-              transform: "rotateZ(90deg)",
-            }}
-          >
-            <span>Get in touch</span>
-            <span className="line"></span>
-            <span>
+        </div>
+      </aside>
+      <main className="container">
+        {children}
+        <footer className="row mb-4">
+          <div className="col text-center">
+
+            <hr style={{ borderColor: "var(--border-color)" }} />
+            <p>
+             © {new Date().getFullYear()} All Rights Reserved · Mark Janiczak 
+            </p>
+            <p>
               <a
-                className="mr-2"
                 title="github"
                 rel="noreferrer"
                 target="_blank"
                 href="https://github.com/markjaniczak"
               >
-                <i className="fab fa-lg fa-github" />
+                GitHub
               </a>
+              <span className="mx-2">·</span>
               <a
-                className="mr-2"
                 title="npm"
                 rel="noreferrer"
                 target="_blank"
                 href="https://www.npmjs.com/~markjaniczak"
               >
-                <i className="fab fa-lg fa-npm" />
+                NPM
               </a>
+              <span className="mx-2">·</span>
               <a
                 title="linkedin"
                 rel="noreferrer"
                 target="_blank"
                 href="https://www.linkedin.com/in/markjaniczak/"
               >
-                <i className="fab fa-lg fa-linkedin" />
+                LinkedIn
               </a>
-            </span>
+            </p>
           </div>
-        </aside>
-      </div>
-      <footer className="row d-xl-none mb-4">
-        <div className="col text-center">
-          <span className="text-uppercase">
-            E: <a href="mailto:mark@janiczak.me">mark@janiczak.me</a>
-          </span>
-          <hr style={{ borderColor: "var(--border-color)" }} />
+        </footer>
+
+      </main>
+      <aside className="d-none d-xl-block" style={{ width: 200 }}>
+        <div
+          className="position-fixed"
+          style={{ top: 50, right: 50 }}
+        >
+          <button
+            key={key}
+            className={classNames("btn", {
+              "btn-light": theme === "light",
+              "btn-dark": theme === "dark",
+            })}
+            title="Toggle theme"
+            onClick={toggleTheme}
+          >
+            {theme === "dark" ? (
+              <i className="fa fa-sun" />
+            ) : (
+                <i className="fa fa-moon" />
+              )}
+          </button>
+        </div>
+        <div
+          className="d-flex justify-content-between text-uppercase text-right position-fixed"
+          style={{
+            bottom: 50,
+            right: 50,
+            width: 300,
+            transformOrigin: "right",
+            transform: "rotateZ(90deg)",
+          }}
+        >
+          <span>Get in touch</span>
+          <span className="line"></span>
           <span>
             <a
-              className="mr-3"
+              style={{
+                transform: "rotateZ(-90deg)",
+              }}
+              className="mr-2 d-inline-block"
               title="github"
               rel="noreferrer"
               target="_blank"
               href="https://github.com/markjaniczak"
             >
-              <i className="fab fa-2x fa-github" />
+              <i className="fab fa-lg fa-github" />
             </a>
             <a
-              className="mr-3"
+              style={{
+                transform: "rotateZ(-90deg)"
+              }}
+              className="mr-2 d-inline-block"
               title="npm"
               rel="noreferrer"
               target="_blank"
               href="https://www.npmjs.com/~markjaniczak"
             >
-              <i className="fab fa-2x fa-npm" />
+              <i className="fab fa-lg fa-npm" />
             </a>
             <a
+              style={{
+                transform: "rotateZ(-90deg)"
+              }}
+              className="d-inline-block"
               title="linkedin"
               rel="noreferrer"
               target="_blank"
               href="https://www.linkedin.com/in/markjaniczak/"
             >
-              <i className="fab fa-2x fa-linkedin" />
+              <i className="fab fa-lg fa-linkedin" />
             </a>
           </span>
         </div>
-      </footer>
+      </aside>
     </div>
   )
 }

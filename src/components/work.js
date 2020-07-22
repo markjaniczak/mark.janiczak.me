@@ -2,12 +2,24 @@ import React, { useMemo } from "react"
 
 const experiences = [
   {
+    workplace: "Culture Kings",
+    link: "https://culturekings.com.au",
+    children: [
+      {
+        role: "Front End Developer",
+        fromDate: "2020-08-17",
+        blurb: ``
+      }
+    ]
+  },
+  {
     workplace: "Neto eCommerce",
     link: "https://netohq.com",
     children: [
       {
         role: "Developer Advocate",
         fromDate: "2020-03-01",
+        toDate: "2020-08-14",
         blurb: `Assisting technology partners with integrating their services as add-ons in Neto. 
             Most add-ons utilise Neto's API to fetch and update data but they also utilise front-end scripts on the webstore.
             As part of the Solutions team I'm also involved in initiatives such as redesigning and developing our API documentation.`,
@@ -72,11 +84,11 @@ const Experience = ({ role, fromDate, toDate, blurb }) => {
   return (
     <div className="row mb-1">
       <div className="col-12 col-lg-6">
-        <h4>{role}</h4>
+        <h5>{role}</h5>
         <small>
-          {`${shortMonthName(from)} ${from.getFullYear()} - `}
+          {`${shortMonthName(from)} ${from.getFullYear()} — `}
           {toDate ? `${shortMonthName(to)} ${to.getFullYear()}` : "Present"}
-          {" — "}
+          {" · "}
           {`${duration} months`}
         </small>
       </div>
@@ -88,13 +100,11 @@ const Experience = ({ role, fromDate, toDate, blurb }) => {
 const ExperienceGroup = ({ workplace, link, children }) => {
   return (
     <div>
-      <div className="mb-2">
-        <h3 className="d-inline">{workplace} </h3>
-        <a title={workplace} target="_blank" rel="noreferrer" href={link}>
-          <i className="fa fa-link"></i>
+      <div className="mb-4">
+        <a title={workplace} target="_blank" rel="noreferrer" href={link} style={{ fontWeight: 600 }} className="underline">
+          <h3 className="d-inline">{workplace} </h3>
         </a>
       </div>
-      <hr />
       <ul className="list-unstyled">
         {children.map((experience, k) => (
           <li key={k}>

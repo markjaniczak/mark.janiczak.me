@@ -8,12 +8,9 @@ const Hero = () => {
       style={{ minHeight: "100vh", position: 'relative' }}
     >
       <div className="container">
+        <p className="text-uppercase">Web Developer</p>
         <h1 className="display-2">Mark Janiczak</h1>
-        <p className="h3">Web Developer</p>
-        <p className="h3">Brisbane, Australia</p>
-      </div>
-      <div style={{ position: 'absolute', bottom: 50 }}>
-        <div class="icon-scroll"></div>
+        <a href="mailto:mark@janiczak.me" className="underline">mark@janiczak.me</a>
       </div>
     </section>
   )
