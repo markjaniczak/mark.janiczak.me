@@ -101,7 +101,7 @@ const ExperienceGroup = ({ workplace, link, children }) => {
   return (
     <div>
       <div className="mb-4">
-        <a title={workplace} target="_blank" rel="noreferrer" href={link} style={{ fontWeight: 600 }} className="underline">
+        <a title={workplace} target="_blank" rel="noreferrer" href={link} style={{ fontWeight: 600 }}>
           <h3 className="d-inline">{workplace} </h3>
         </a>
       </div>
