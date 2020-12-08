@@ -1,0 +1,83 @@
+---
+title: Neto vs Shopify - A Technical Comparison
+date: 2020-12-08T00:00:00Z
+description: An in-depth comparison using everything I've learned in my career about the technical capabilities of both platforms.
+---
+
+## CDN
+- Shopify uses Fastly
+- Neto uses Cloudflare
+- Generally the same coverage and speeds
+
+## Images
+- Shopify supports png, jpg, gif
+- Neto supports png, jpg, gif
+
+- Shopify serves webp and webm
+- Neto serves original format
+
+- Shopify supports image transforms such as size, crop, scale and format (progressive)
+- Neto does not support any transforms
+
+- Inexpensive platforms exist for this which can be used with either platform such as Imgix
+
+## Cart
+- Shopify cart is not injected by default and be interacted with using an ajax API /cart/*.js
+- Neto cart is injected by default and can only be interacted with using JS although this is not well documented
+
+- Shopify cart is less opinionated about how it should be used
+- Neto's JS handles all add to cart logic using event listeners and data attributes
+
+## Templating
+- Shopify uses Liquid
+- Neto uses B@se
+
+- Similar syntax in that data variables are prefixed with one character and functions are prefixed with another
+
+- Shopify provides filters which are useful for transforming data before it's rendered
+- Neto has a few functions which make transformations easy such as format
+
+- Both platforms provide support for template partials
+- Both platforms provide support for template partials to be rendered with Ajax
+
+## Scripting
+- Shopify provides checkout and 
+
+## Checkout
+- Both platforms provide a hosted checkout which has limited customisation, however this is normal among most ecommerce platforms to limit the scope of PCI compliance placed on the merchant
+- Both platforms allow for scripts to be placed on the checkout and thankyou pages however Shopify has some limitations unless using Shopify Plus
+- Neto has more payment methods available out of the box such as Afterpay and Zip
+- Neto has more customisation available for shipping rates and supports local carriers such as AusPost, TNT, Toll and several shipping aggregators out of the box
+
+## SEO
+- Both platforms provide support for page metafields
+- Both platforms provide support for 301 redirects and can handle updated / deleted pages 
+
+## Content
+- 
+
+## Menus
+- Both platforms provide some sort of structured editor for designing menus and navigation
+
+## Integrations
+- Neto provides several native inte
+
+## Data
+- The scope of Shopify's data is limited but well executed. It handles basic inventory, order, customer and return management.
+- Neto's scope is wider but the relationships between the data is often not clear or poorly thought out.
+- Neto has better inventory and order management out of the box which cover more scenarios. For example customer groups, item discounts, serial tracking and picking bins
+
+## Performance
+- Shopify uses GCP to host their platform
+- Neto uses AWS to host their platform
+
+- Neto uses Australian and US regions in AWS 
+- Shopify uses US, Asian and European regions in GCP
+
+## API
+- Shopify's APIs cover most of their platform. They also provide a GraphQL API for a custom storefront.
+- Neto's APIs cover most of the platform but are missing webhooks.
+
+## Documentation
+- Every system is mostly documentated by Shopify
+- Neto's documention is lacking
