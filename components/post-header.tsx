@@ -9,7 +9,7 @@ interface PostHeaderProps {
 export const PostHeader: React.FC<PostHeaderProps> = ({ title, date }) => {
 	return (
 		<div className="mb-8">
-			<h1 className="text-4xl">{title}</h1>
+			<h1 className="text-2xl lg:text-4xl">{title}</h1>
 			<DateTime date={date} />
 		</div>
 	);
