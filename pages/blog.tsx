@@ -12,7 +12,7 @@ const Blog: React.FC<BlogProps> = ({ posts }) => {
 	return (
 		<Layout>
 			<Container>
-				<h1 className="mb-8 text-4xl">All Posts</h1>
+				<h1 className="mb-8 text-4xl">Blog</h1>
 				<div className="grid grid-flow-row gap-4">
 					{posts.map((post, i) => (
 						<PostPreview post={post} key={i} />
