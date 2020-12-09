@@ -1,15 +1,18 @@
 ---
-title: Neto vs Shopify - A Technical Comparison
+title: Neto vs Shopify
 date: 2020-12-08T00:00:00Z
 description: An in-depth comparison using everything I've learned in my career about the technical capabilities of both platforms.
 ---
 
-## CDN
+# Table of Contents
+
+# CDN
 - Shopify uses Fastly
 - Neto uses Cloudflare
 - Generally the same coverage and speeds
 
-## Images
+# Images
+Developers who work on sites for clients know that it's easy for a client to quickly undo all of the effort you've put into 
 - Shopify supports png, jpg, gif, mp4 and 3d images for products
 - Neto supports png, jpg, gif for products
 
@@ -21,63 +24,82 @@ description: An in-depth comparison using everything I've learned in my career a
 
 - Inexpensive platforms exist for this which can be used with either platform such as Imgix
 
-## Cart
+# Cart
 - Shopify cart is not injected by default and be interacted with using an ajax API /cart/*.js
 - Neto cart is injected by default and can only be interacted with using JS although this is not well documented
 
 - Shopify cart is less opinionated about how it should be used
 - Neto's JS handles all add to cart logic using event listeners and data attributes
 
-## Templating
-- Shopify uses Liquid
-- Neto uses B@se
+# Workflow
+Shopify has an official command line theme development tool called [Theme Kit](https://shopify.github.io/themekit/). Theme Kit is cross platform and enables:
+- Uploading themes to multiple environments
+- Downloading themes to a local environment
+- Watching for local changes and automatically uploading
 
-- Similar syntax in that data variables are prefixed with one character and functions are prefixed with another
+Shopify also has a store admin API which enables the programmatic change of:
+- Articles
+- Assets
+- Blogs
+- Pages
+- Redirects
+- Scripts
+- Themes
 
-- Shopify provides filters which are useful for transforming data before it's rendered
-- Neto has a few functions which make transformations easy such as format
+# Templating
+Both Neto and Shopify have their own proprietary templating languages called B@se and Liquid, respectively. If you've used a templating language like [Jinja](https://jinja.palletsprojects.com/en/2.11.x/) or [Handlebars](https://handlebarsjs.com/) before, the syntax in B@se and Liquid won't come as a surprise.
 
-- Both platforms provide support for template partials
-- Both platforms provide support for template partials to be rendered with Ajax
+In Neto's B@se, data can be accessed by using a tag such as `[@sku@]`. The available tags depend on the scope of the page and optionally the function that it is being rendered in. Functions in B@se require parameters and mostly the share the same pattern of having a `header`, `body` and `footer` parameter. This pattern is intuitive in templates where looping through some data type is required such as products on a category page, lines in an order or variants in a product.
 
-## Scripting
+In Shopify's Liquid, data can be accessed by using an object `{{ product.id }}`. One key difference to B@se is that data in Liquid is namespaced by object type in the current scope of your template e.g. `{{ order.attributes }}`, `{{ page.url }}`. This is helpful when working with data types that share similar or the same attribute names. Shopify also provides data filters which can be used to transform data such as an array, string or number. B@se supports string and number transformations using the `[%format%]` function but transforming arrays can be clunky.
+
+Both platforms support some form of template partials. 
+
+Both platforms support ajax rendering of templates. In Shopify a theme can have different versions of a template denoted by a filename suffix such as `product.quickview.liquid`. Other versions of the template can then be loaded using the `view` parameter `/product/a-cool-product?view=quickview`. Dynamic and static sections can be rendered in a similar way using the [section rendering API](https://shopify.dev/docs/themes/sections/section-rendering-api). Neto takes this functionality a bit further and allows any template partial to be loaded using their `load_ajax_template` [function](https://developers.neto.com.au/documentation/neto-designer-documentation/b-se-tag-library/function-tags/templating/load_ajax_template/). The function supports preloading the template and template variables that can create interesting dynamic pages.
+
+# Forms
+
+# Scripting
 - Shopify provides checkout and 
 
-## Checkout
+# Checkout
 - Both platforms provide a hosted checkout which has limited customisation, however this is normal among most ecommerce platforms to limit the scope of PCI compliance placed on the merchant
 - Both platforms allow for scripts to be placed on the checkout and thankyou pages however Shopify has some limitations unless using Shopify Plus
 - Neto has more payment methods available out of the box such as Afterpay and Zip
 - Neto has more customisation available for shipping rates and supports local carriers such as AusPost, TNT, Toll and several shipping aggregators out of the box
 
-## SEO
+# SEO
 - Both platforms provide support for page metafields
 - Both platforms provide support for 301 redirects and can handle updated / deleted pages 
 
-## Content
+# Content
 - 
 
-## Menus
+# Menus
 - Both platforms provide some sort of structured editor for designing menus and navigation
 
-## Integrations
+# Integrations
 - Neto provides several native inte
 
-## Data
+# Data
 - The scope of Shopify's data is limited but well executed. It handles basic inventory, order, customer and return management.
 - Neto's scope is wider but the relationships between the data is often not clear or poorly thought out.
 - Neto has better inventory and order management out of the box which cover more scenarios. For example customer groups, item discounts, serial tracking and picking bins
 
-## Performance
+# Performance
 - Shopify uses GCP to host their platform
 - Neto uses AWS to host their platform
 
 - Neto uses Australian and US regions in AWS 
 - Shopify uses US, Asian and European regions in GCP
 
-## API
+# API
 - Shopify's APIs cover most of their platform. They also provide a GraphQL API for a custom storefront.
 - Neto's APIs cover most of the platform but are missing webhooks.
 
-## Documentation
+# Documentation
 - Every system is mostly documentated by Shopify
 - Neto's documention is lacking
+
+# Conclusion
+Neto and Shopify use two very different approaches in their software. Neto has established a robust set of features in their own platform that enable a wide variety of featuress while Shopify has an API-first approach that relies on their network third party developers and vendors to build a large ecosystem of features.

@@ -8,7 +8,24 @@ module.exports = {
         'sans-serif'
       ]
     },
-    extend: {},
+    extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            code: {
+              '&::before': {
+                content: 'none'
+              },
+              '&::after': {
+                content: 'none'
+              },
+              backgroundColor: theme('colors.gray.200'),
+              padding: theme('width.1')
+            }
+          }
+        }
+      }),
+    },
   },
   variants: {
     extend: {},

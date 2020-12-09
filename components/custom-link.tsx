@@ -10,9 +10,11 @@ export const CustomLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>>
     }
 
     if (!href.startsWith('/')) {
-        Component = "a"
-        linkProps.target = "_blank"
-        linkProps.rel = "noopener"
+        Component = 'a'
+        if (!href.startsWith('#')) {
+            linkProps.rel = "noopener"
+            linkProps.target = "_blank"
+        }
     }
 
     return <Component {...linkProps}/>

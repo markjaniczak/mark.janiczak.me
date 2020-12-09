@@ -1,6 +1,8 @@
 import Link from 'next/link'
+import { useEffect } from 'react'
 
 export const Layout: React.FC = ({ children }) => {
+
     return (
         <>
             <header className="container mx-auto max-w-screen-md py-10 flex flex-justify">

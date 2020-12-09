@@ -3,4 +3,5 @@ export interface Post {
     description: string;
     date: string;
     slug: string;
+    showTableOfContents?: boolean;
 }
