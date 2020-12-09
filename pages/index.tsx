@@ -8,7 +8,7 @@ export default function Index() {
 		<Layout>
 			<div className="container mx-auto max-w-screen-md pt-20">
 				<section className="mb-10">
-					<h1 className="text-4xl md:text-6xl lg:text-7xl mb-8">Your friendly neighbourhood web developer</h1>
+					<h1 className="text-4xl md:text-6xl lg:text-7xl mb-8 capitalize">Your friendly neighbourhood web developer</h1>
 					<a
 						className="inline-flex font-semibold items-center no-underline rounded-md px-4 py-2 bg-gray-100 dark:bg-gray-800 mb-8 text-current hover:bg-gray-50 dark:hover:bg-gray-500 transition duration-200"
 						href="mailto:mark@janiczak.me"
