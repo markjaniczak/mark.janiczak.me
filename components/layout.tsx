@@ -15,13 +15,6 @@ export const Layout: React.FC = ({ children }) => {
                                 </a>
                             </Link>
                         </li>
-                        <li>
-                            <Link href="/blog" passHref>
-                                <a className="no-underline font-semibold">
-                                    Blog
-                                </a>
-                            </Link>
-                        </li>
                     </ul>
                 </nav>
                 <a className="inline-block no-underline font-semibold border rounded-md px-2 py-1 md:px-4 md:py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition duration-200" href="mailto:mark@janiczak.me">
